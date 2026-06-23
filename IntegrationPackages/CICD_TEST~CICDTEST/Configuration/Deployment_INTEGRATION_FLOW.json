@@ -1,0 +1,16 @@
+{
+  "PackageIntegrationFlowDeployments": {
+    "PackageName": "CICD_TEST",
+    "PackageID": "CICDTEST",
+    "IntegrationFlows": [
+      {
+        "ArtifactID": "Echo",
+        "ArtifactName": "Echo",
+        "Deploy": "false",
+        "Rank": "100",
+        "LogLevel": "INFO",
+        "Runtimes": "iflmap"
+      }
+    ]
+  }
+}

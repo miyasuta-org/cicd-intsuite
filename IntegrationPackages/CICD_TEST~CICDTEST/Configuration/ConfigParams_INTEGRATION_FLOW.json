@@ -1,0 +1,31 @@
+{
+  "PackageIntegrationFlowParameters": {
+    "PackageName": "CICD_TEST",
+    "PackageID": "CICDTEST",
+    "Artifacts": [
+      {
+        "ArtifactID": "Echo",
+        "ArtifactName": "Echo",
+        "ArtifactType": "INTEGRATION_FLOW",
+        "Parameters": [
+          {
+            "DataType": "xsd:string",
+            "Description": null,
+            "ParameterKey": "RESPONSE_MESSAGE",
+            "ParameterValues": {
+              "Default": "Hello from DEV"
+            }
+          },
+          {
+            "DataType": "xsd:string",
+            "Description": null,
+            "ParameterKey": "SAP_ProfileId",
+            "ParameterValues": {
+              "Default": "iflmap"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
