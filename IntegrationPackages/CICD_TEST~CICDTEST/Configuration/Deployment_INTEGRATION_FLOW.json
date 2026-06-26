@@ -11,7 +11,10 @@
         "LogLevel": "INFO",
         "Runtimes": "iflmap",
         "Environments": {
-          "TST": { "Deploy": "true", "LogLevel": "INFO" }
+          "TST": {
+            "Deploy": "true",
+            "LogLevel": "INFO"
+          }
         }
       }
     ]
