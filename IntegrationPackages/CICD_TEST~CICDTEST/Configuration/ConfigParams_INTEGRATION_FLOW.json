@@ -13,7 +13,8 @@
             "Description": null,
             "ParameterKey": "RESPONSE_MESSAGE",
             "ParameterValues": {
-              "Default": "Hello from DEV"
+              "Default": "Hello from DEV",
+              "TST": "Hello from TST"
             }
           },
           {
