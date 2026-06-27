@@ -1,0 +1,87 @@
+{
+  "generated": "2026-06-27T20:22:20Z",
+  "environments": [
+    "DEV",
+    "TST"
+  ],
+  "environmentUrls": {
+    "DEV": "https://3b775374trial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com",
+    "TST": "https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com"
+  },
+  "packages": [
+    {
+      "id": "CICDTEST",
+      "name": "CICD_TEST",
+      "source": "btp",
+      "foundOnEnvironments": [
+        "DEV",
+        "TST"
+      ],
+      "gitConfig": {
+        "found": true,
+        "jsonFormat": "new"
+      },
+      "iflows": [
+        {
+          "id": "Echo",
+          "name": "Echo",
+          "source": "btp",
+          "hasGitConfig": true,
+          "environments": {
+            "DEV": {
+              "deploy": "false",
+              "logLevel": "INFO",
+              "runtimeStatus": "STARTED",
+              "runtimeVersion": "1.0.2"
+            },
+            "TST": {
+              "deploy": "true",
+              "logLevel": "INFO",
+              "runtimeStatus": "STARTED",
+              "runtimeVersion": "1.0.2"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "id": "Test",
+      "name": "Test",
+      "source": "btp",
+      "foundOnEnvironments": [
+        "DEV"
+      ],
+      "gitConfig": {
+        "found": false,
+        "jsonFormat": null
+      },
+      "iflows": [
+        {
+          "id": "Message_Mapping",
+          "name": "Message Mapping",
+          "source": "btp",
+          "hasGitConfig": false,
+          "environments": {
+            "DEV": {
+              "deploy": null,
+              "logLevel": null,
+              "runtimeStatus": "STARTED",
+              "runtimeVersion": "1.0.2"
+            },
+            "TST": {
+              "deploy": null,
+              "logLevel": null,
+              "runtimeStatus": null,
+              "runtimeVersion": null
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "btpPackageCount": 2,
+    "gitOnlyPackageCount": 0,
+    "totalPackageCount": 2
+  }
+}
