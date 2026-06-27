@@ -52,6 +52,7 @@ on:
         options:
           - ""
           - "DEV"
+          - "TST"
 
 permissions:
   contents: write
