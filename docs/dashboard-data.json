@@ -1,11 +1,10 @@
 {
-  "generated": "2026-07-09T03:17:26Z",
+  "generated": "2026-07-10T03:19:10Z",
   "environments": [
     "DEV",
     "TST"
   ],
   "environmentUrls": {
-    "DEV": "https://3b775374trial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com",
     "TST": "https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com"
   },
   "packages": [
@@ -14,7 +13,6 @@
       "name": "CICD_TEST",
       "source": "btp",
       "foundOnEnvironments": [
-        "DEV",
         "TST"
       ],
       "gitConfig": {
@@ -31,8 +29,8 @@
             "DEV": {
               "deploy": "false",
               "logLevel": "INFO",
-              "runtimeStatus": "STARTED",
-              "runtimeVersion": "1.0.2"
+              "runtimeStatus": null,
+              "runtimeVersion": null
             },
             "TST": {
               "deploy": "true",
@@ -43,45 +41,11 @@
           }
         }
       ]
-    },
-    {
-      "id": "Test",
-      "name": "Test",
-      "source": "btp",
-      "foundOnEnvironments": [
-        "DEV"
-      ],
-      "gitConfig": {
-        "found": false,
-        "jsonFormat": null
-      },
-      "iflows": [
-        {
-          "id": "Message_Mapping",
-          "name": "Message Mapping",
-          "source": "btp",
-          "hasGitConfig": false,
-          "environments": {
-            "DEV": {
-              "deploy": null,
-              "logLevel": null,
-              "runtimeStatus": "STARTED",
-              "runtimeVersion": "1.0.2"
-            },
-            "TST": {
-              "deploy": null,
-              "logLevel": null,
-              "runtimeStatus": null,
-              "runtimeVersion": null
-            }
-          }
-        }
-      ]
     }
   ],
   "summary": {
-    "btpPackageCount": 2,
+    "btpPackageCount": 1,
     "gitOnlyPackageCount": 0,
-    "totalPackageCount": 2
+    "totalPackageCount": 1
   }
 }

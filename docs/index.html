@@ -248,7 +248,7 @@
 <body>
   <div class="header">
     <h1>📊 Integration Suite Dashboard</h1>
-    <div class="meta"><span>📁 <strong>miyasuta-org/cicd-intsuite</strong></span><span>📅 2026-07-09T03:17:26Z</span><span>🌍 <a href="https://3b775374trial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com/shell/home" target="_blank" style="color:#58a6ff;text-decoration:none;">DEV</a>, <a href="https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com/shell/home" target="_blank" style="color:#58a6ff;text-decoration:none;">TST</a></span><span>📦 2 BTP packages</span>
+    <div class="meta"><span>📁 <strong>miyasuta-org/cicd-intsuite</strong></span><span>📅 2026-07-10T03:19:10Z</span><span>🌍 DEV, <a href="https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com/shell/home" target="_blank" style="color:#58a6ff;text-decoration:none;">TST</a></span><span>📦 1 BTP packages</span>
     </div>
     <div class="scope-note">ℹ️ This dashboard covers Integration Flow (IFlow) artifacts only. Other artifact types (Value Mappings, Script Collections, etc.) are not included.</div>
     <nav class="page-nav">
@@ -276,7 +276,7 @@
       <h2>📈 Summary</h2>
       <div class="summary-grid">
         <div class="summary-card" data-card-filter="btp" onclick="toggleCardFilter('btp')">
-          <div class="number">2</div>
+          <div class="number">1</div>
           <div class="label">BTP Packages</div>
         </div>
         <div class="summary-card" data-card-filter="not-all-envs" onclick="toggleCardFilter('not-all-envs')">
@@ -284,13 +284,12 @@
           <div class="label">Not on All Environments</div>
         </div>
         <div class="summary-card" data-card-filter="git-issues" onclick="toggleCardFilter('git-issues')">
-          <div class="number">1</div>
+          <div class="number">0</div>
           <div class="label">Git Config Issues</div>
-          <div class="sub-label">🔴 1 packages missing entirely</div>
+          <div class="sub-label">🔴 0 packages missing entirely</div>
           <div class="sub-label">⚠️ 0 packages with missing IFlows</div>
         </div>
       </div>
-      <div class="alert">⚠️ <strong>Action required:</strong> 1 package(s) and 1 IFlow(s) found on BTP have no Git deployment configuration.</div>
     </div>
     <div class="filter-bar">
       <input type="text" id="searchInput" placeholder="🔍 Filter by package or IFlow name/ID..." onkeyup="filterDashboard()">
@@ -305,10 +304,10 @@
       <button onclick="expandAll()">📂 Expand All</button>
       <button onclick="collapseAll()">📁 Collapse All</button>
     </div>
-    <div class="package-section collapsed" data-package="CICDTEST CICD_TEST" data-source="btp" data-git-found="true" data-has-nogit-iflows="false" data-missing-envs="false">
-      <div class="package-header error" onclick="togglePackage(this)">
-        <h2><span class="toggle-arrow">▶</span> 🔴 📦 CICD_TEST (<code class="copyable" onclick="showIdMenu(event,'package','CICDTEST','','DEV,TST','CICD_TEST','true')" title="Click for options">CICDTEST</code>)</h2>
-        <div class="meta"><span class="json-template-link" onclick="showJsonTemplate(event)">Deployment JSON: 🟢 new</span> · 🔴 Config mismatch: deployment config differs from BTP reality</div>
+    <div class="package-section collapsed" data-package="CICDTEST CICD_TEST" data-source="btp" data-git-found="true" data-has-nogit-iflows="false" data-missing-envs="true">
+      <div class="package-header warning" onclick="togglePackage(this)">
+        <h2><span class="toggle-arrow">▶</span> ⚠️ 📦 CICD_TEST (<code class="copyable" onclick="showIdMenu(event,'package','CICDTEST','','TST','CICD_TEST','true')" title="Click for options">CICDTEST</code>)</h2>
+        <div class="meta"><span class="json-template-link" onclick="showJsonTemplate(event)">Deployment JSON: 🟢 new</span> · 📦 <strong>Not found on:</strong> DEV</div>
       </div>
       <div class="package-body">
       <table>
@@ -316,42 +315,16 @@
           <tr>
             <th>IFlow Name</th>
             <th>IFlow ID</th>
-            <th><a href="https://3b775374trial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com/shell/home" target="_blank" style="color:var(--accent-blue);text-decoration:none;">DEV</a><br><sub>Deploy · LogLevel · Runtime</sub></th>
+            <th>DEV<br><sub>Deploy · LogLevel · Runtime</sub></th>
             <th><a href="https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com/shell/home" target="_blank" style="color:var(--accent-blue);text-decoration:none;">TST</a><br><sub>Deploy · LogLevel · Runtime</sub></th>
           </tr>
         </thead>
         <tbody>
-          <tr class="error-row" data-iflow="Echo Echo" data-loglevel="INFO">
-            <td class="iflow-name" title="Echo">🔴 Echo</td>
-            <td class="iflow-id" title="Echo"><code class="copyable" onclick="showIdMenu(event,'iflow','Echo','CICDTEST','DEV,TST','','','DEV,TST')" title="Click for options">Echo</code></td>
-            <td class="env-cell"><span class="row-item">❌ false</span><span class="row-item">🔵 INFO</span><span class="row-item">✅ STARTED v1.0.2</span></td>
+          <tr class="ok-row" data-iflow="Echo Echo" data-loglevel="INFO">
+            <td class="iflow-name" title="Echo">✅ Echo</td>
+            <td class="iflow-id" title="Echo"><code class="copyable" onclick="showIdMenu(event,'iflow','Echo','CICDTEST','TST','','','TST')" title="Click for options">Echo</code></td>
+            <td class="env-not-found" title="Package not found on DEV">📦 Not found</td>
             <td class="env-cell"><span class="row-item">✅ true</span><span class="row-item">🔵 INFO</span><span class="row-item">✅ STARTED v1.0.2</span></td>
-          </tr>
-        </tbody>
-      </table>
-      </div>
-    </div>
-    <div class="package-section collapsed" data-package="Test Test" data-source="btp" data-git-found="false" data-has-nogit-iflows="true" data-missing-envs="true">
-      <div class="package-header not-in-git" onclick="togglePackage(this)">
-        <h2><span class="toggle-arrow">▶</span> ❓ 📦 Test (<code class="copyable" onclick="showIdMenu(event,'package','Test','','DEV','Test','false')" title="Click for options">Test</code>)</h2>
-        <div class="meta">❓ <strong>Not found in Git</strong> — This package exists on BTP but has no deployment configuration · 📦 <strong>Not found on:</strong> TST</div>
-      </div>
-      <div class="package-body">
-      <table>
-        <thead>
-          <tr>
-            <th>IFlow Name</th>
-            <th>IFlow ID</th>
-            <th><a href="https://3b775374trial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com/shell/home" target="_blank" style="color:var(--accent-blue);text-decoration:none;">DEV</a><br><sub>Deploy · LogLevel · Runtime</sub></th>
-            <th><a href="https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com/shell/home" target="_blank" style="color:var(--accent-blue);text-decoration:none;">TST</a><br><sub>Deploy · LogLevel · Runtime</sub></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr class="notingit-row" data-iflow="Message_Mapping Message Mapping" data-loglevel="">
-            <td class="iflow-name" title="Message Mapping">❓ Message Mapping</td>
-            <td class="iflow-id" title="Message_Mapping"><code class="copyable" onclick="showIdMenu(event,'iflow','Message_Mapping','Test','DEV','','','DEV')" title="Click for options">Message_Mapping</code></td>
-            <td class="env-cell"><span class="row-item">—</span><span class="row-item">—</span><span class="row-item">✅ STARTED v1.0.2</span></td>
-            <td class="env-not-found" title="Package not found on TST">📦 Not found</td>
           </tr>
         </tbody>
       </table>
@@ -375,7 +348,7 @@
       <p style="margin-top:8px;font-size:13px;color:#57606a;"><strong>JSON Format:</strong> 🟢 new = Enhanced format with Environments overrides | 🟡 old = Legacy format with flat Deploy flag | ⚪ none = No deployment configuration found</p>
       <p style="margin-top:4px;font-size:13px;color:#57606a;"><strong>Scope:</strong> This dashboard considers Integration Flow (IFlow) artifacts only. Other artifact types such as Value Mappings, Script Collections, or Message Mappings are not included.</p>
     </div>
-    <script>var envUrls = {"DEV":"https://3b775374trial.integrationsuite-trial01.cfapps.us10-001.hana.ondemand.com","TST":"https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com"};
+    <script>var envUrls = {"TST":"https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com"};
     var envOrder = ["DEV","TST"];
     var gitBaseUrl = "https://github.com/miyasuta-org/cicd-intsuite";</script>
     <script>
