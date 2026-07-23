@@ -1,20 +1,15 @@
 {
-  "generated": "2026-07-22T02:37:48Z",
+  "generated": "2026-07-23T02:43:36Z",
   "environments": [
     "DEV",
     "TST"
   ],
-  "environmentUrls": {
-    "TST": "https://integration-fpoxjyaz.integrationsuite-trial.cfapps.ap21.hana.ondemand.com"
-  },
+  "environmentUrls": {},
   "packages": [
     {
       "id": "CICDTEST",
       "name": "CICD_TEST",
-      "source": "btp",
-      "foundOnEnvironments": [
-        "TST"
-      ],
+      "source": "git-only",
       "gitConfig": {
         "found": true,
         "jsonFormat": "new"
@@ -23,7 +18,7 @@
         {
           "id": "Echo",
           "name": "Echo",
-          "source": "btp",
+          "source": "git-only",
           "hasGitConfig": true,
           "environments": {
             "DEV": {
@@ -35,8 +30,8 @@
             "TST": {
               "deploy": "true",
               "logLevel": "INFO",
-              "runtimeStatus": "STARTED",
-              "runtimeVersion": "1.0.2"
+              "runtimeStatus": null,
+              "runtimeVersion": null
             }
           }
         }
@@ -44,8 +39,8 @@
     }
   ],
   "summary": {
-    "btpPackageCount": 1,
-    "gitOnlyPackageCount": 0,
+    "btpPackageCount": 0,
+    "gitOnlyPackageCount": 1,
     "totalPackageCount": 1
   }
 }
